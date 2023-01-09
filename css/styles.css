@@ -151,18 +151,6 @@ body {
   align-items: end;
 }
 
-.sidebar__user {
-  background: blue;
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.sidebar__user:hover {
-  border: 1px solid white;
-}
-
 .sidebar__social-icons {
   font-size: 3.5rem;
   color: white;
