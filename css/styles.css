@@ -181,17 +181,10 @@ body {
   padding: 0 2rem 2rem 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, auto);
+  grid-auto-rows: 25rem;
   grid-auto-flow: dense;
   gap: 2rem;
   z-index: -1;
-}
-
-.height {
-  height: 100vh;
-}
-.item {
-  overflow: hidden;
 }
 
 .item img {
@@ -199,11 +192,6 @@ body {
   cursor: pointer;
   height: 100%;
   width: 100%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.item:hover img {
-  transform: scale(1.1);
 }
 
 .item.hide {
@@ -212,26 +200,54 @@ body {
 
 .item-1 {
   grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item-2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item-3 {
+  grid-column: span 1;
   grid-row: span 1;
 }
 
 .item-4 {
   grid-column: span 2;
-  grid-row: span 2;
+  grid-row: span 1;
 }
 
 .item-5 {
-  grid-column: span 2;
-  grid-row: span 3;
+  grid-column: span 1;
+  grid-row: span 2;
 }
 
-.item-10 {
+.item-6 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.item-9 {
   grid-column: span 2;
   grid-row: span 1;
 }
 
+.item-10 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.item-12 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item-14 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
 .item-15 {
-  grid-column: span 2;
+  grid-column: span 1;
   grid-row: span 2;
 }
 
