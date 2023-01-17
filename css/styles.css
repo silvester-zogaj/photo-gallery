@@ -43,7 +43,7 @@ body {
   text-align: center;
   gap: 10rem;
   position: fixed;
-  z-index: 1;
+  z-index: -1;
   /*   transform:translateX(0);
     visibility: visible; */
 }
@@ -239,7 +239,7 @@ body {
 
 .item-12 {
   grid-column: span 1;
-  grid-row: span 1;
+  grid-row: span 2;
 }
 .item-14 {
   grid-column: span 1;
@@ -247,6 +247,18 @@ body {
 }
 
 .item-15 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item-16 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.item-22 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.item-24 {
   grid-column: span 1;
   grid-row: span 2;
 }
@@ -270,8 +282,8 @@ body {
 
 .modal-overlay img {
   object-fit: cover;
-  height: 60rem;
-  width: 60rem;
+  height: 70rem;
+  width: 80rem;
 }
 
 .close-btn {
