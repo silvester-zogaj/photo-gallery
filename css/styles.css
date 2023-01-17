@@ -164,6 +164,7 @@ body {
 
 .topbar {
   height: 5rem;
+  margin-left: 30rem;
   width: 100%;
   position: fixed;
   background-color: black;
@@ -311,21 +312,7 @@ body {
     z-index: -1;
   }
 
-  .item-1,
-  .item-2,
-  .item-3,
-  .item-4,
-  .item-5,
-  .item-6,
-  .item-7,
-  .item-8,
-  .item-9,
-  .item-10,
-  .item-11,
-  .item-12,
-  .item-13,
-  .item-14,
-  .item-15 {
+  .item {
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -361,10 +348,18 @@ body {
     left: 2rem;
   }
 
+  .topbar {
+    height: 2rem;
+    margin-left: 0;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+  }
+
   #grid-container {
     position: absolute;
     left: 0;
-    top: 5rem;
+    top: 2rem;
     width: 100%;
     padding: 0 2rem 2rem 2rem;
     display: grid;
@@ -372,27 +367,8 @@ body {
     grid-template-rows: none;
     grid-auto-rows: 35rem;
     grid-auto-flow: dense;
-    gap: 1.5rem;
+    row-gap: 1.5rem;
     z-index: -1;
     transition: all 0.3s ease-in-out;
-  }
-
-  .item-1,
-  .item-2,
-  .item-3,
-  .item-4,
-  .item-5,
-  .item-6,
-  .item-7,
-  .item-8,
-  .item-9,
-  .item-10,
-  .item-11,
-  .item-12,
-  .item-13,
-  .item-14,
-  .item-15 {
-    grid-column: span 1;
-    grid-row: span 1;
   }
 }

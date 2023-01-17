@@ -27,6 +27,7 @@ function sidebarOpen() {
   sidebar.style.visibility = "visible";
   gridContainer.style.width = "calc(100% - 30rem)";
   gridContainer.style.left = "30rem";
+  gridContainer.style.padding = "0 2rem 2rem 0rem";
   sidebarOpenIcon.style.display = "none";
 }
 
@@ -40,6 +41,7 @@ function sidebarClose() {
   sidebar.style.visibility = "hidden";
   gridContainer.style.width = "100%";
   gridContainer.style.left = "0";
+  gridContainer.style.padding = "0 2rem 2rem 2rem";
   sidebarOpenIcon.style.display = "block";
 }
 
@@ -56,16 +58,19 @@ gridImages.forEach(function (image) {
 window.addEventListener("click", function (e) {
   if (e.target === modalOverlay) {
     modalOverlay.style.display = "none";
+    sidebarOpenIcon.style.display = "block";
   }
 });
 
 closeBtn.addEventListener("click", function () {
   modalOverlay.style.display = "none";
+  sidebarOpenIcon.style.display = "block";
 });
 
 window.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     modalOverlay.style.display = "none";
+    // sidebarOpenIcon.style.display = "block";
   }
 });
 
@@ -103,6 +108,14 @@ function screenFunction(screen) {
     sidebarOpen();
   } else {
     sidebarClose();
+    gridImages.forEach(function (image) {
+      image.addEventListener("click", function () {
+        modalOverlay.style.display = "flex";
+        modalImg.src = image.src;
+        sidebarOpenIcon.style.display = "none";
+        sidebarClose();
+      });
+    });
   }
 }
 
