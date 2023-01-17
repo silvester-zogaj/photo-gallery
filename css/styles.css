@@ -168,6 +168,7 @@ body {
   width: 100%;
   position: fixed;
   background-color: black;
+  z-index: -1;
 }
 
 /*============================
@@ -316,6 +317,12 @@ body {
     grid-column: span 1;
     grid-row: span 1;
   }
+
+  .modal-overlay img {
+    object-fit: cover;
+    height: 60rem;
+    width: 70rem;
+  }
 }
 
 /*========================================================
@@ -370,5 +377,11 @@ body {
     row-gap: 1.5rem;
     z-index: -1;
     transition: all 0.3s ease-in-out;
+  }
+
+  .modal-overlay img {
+    object-fit: cover;
+    height: 50rem;
+    width: 60rem;
   }
 }

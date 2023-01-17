@@ -17,6 +17,9 @@ const sidebar = document.getElementById("sidebar");
 const sidebarOpenIcon = document.querySelector(".sidebar__open");
 const sidebarCloseIcon = document.querySelector(".sidebar__close");
 
+// General Variables
+let isModalOpen;
+
 // Open Sidebar
 sidebarOpenIcon.addEventListener("click", function () {
   sidebarOpen();
@@ -51,6 +54,7 @@ gridImages.forEach(function (image) {
   image.addEventListener("click", function () {
     modalOverlay.style.display = "flex";
     modalImg.src = image.src;
+    isModalOpen = true;
   });
 });
 
@@ -59,18 +63,23 @@ window.addEventListener("click", function (e) {
   if (e.target === modalOverlay) {
     modalOverlay.style.display = "none";
     sidebarOpenIcon.style.display = "block";
+    isModalOpen = false;
   }
 });
 
 closeBtn.addEventListener("click", function () {
   modalOverlay.style.display = "none";
   sidebarOpenIcon.style.display = "block";
+  isModalOpen = false;
 });
 
 window.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
+  if (event.key === "Escape" && isModalOpen === true) {
     modalOverlay.style.display = "none";
-    // sidebarOpenIcon.style.display = "block";
+    sidebarOpenIcon.style.display = "block";
+    isModalOpen = false;
+  } else {
+    sidebarOpenIcon.style.display = "none";
   }
 });
 
@@ -102,18 +111,29 @@ for (let i = 0; i < list.length; i++) {
 
 //MEDIA QUERIES
 
-// if screen size meets requirements, do following:
+// if screen size meets requirements, modal will keep sidebar open in background and in general.
+
+//
 function screenFunction(screen) {
   if (screen.matches) {
     sidebarOpen();
+    gridImages.forEach(function (image) {
+      image.addEventListener("click", function () {
+        modalOverlay.style.display = "flex";
+        modalImg.src = image.src;
+        sidebarOpen();
+      });
+    });
+    // if not, modal will close sidebar when modal is opened.
   } else {
     sidebarClose();
     gridImages.forEach(function (image) {
       image.addEventListener("click", function () {
         modalOverlay.style.display = "flex";
         modalImg.src = image.src;
-        sidebarOpenIcon.style.display = "none";
         sidebarClose();
+        sidebarOpenIcon.style.display = "none";
+        isModalOpen = true;
       });
     });
   }
