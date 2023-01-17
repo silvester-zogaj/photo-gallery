@@ -205,64 +205,30 @@ body {
   grid-row: span 2;
 }
 
-.item-2 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-.item-3 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.item-4 {
+.item-4,
+.item-9,
+.item-16,
+.item-25,
+.item-34 {
   grid-column: span 2;
   grid-row: span 1;
 }
 
-.item-5 {
+.item-5,
+.item-6,
+.item-12,
+.item-14,
+.item-15,
+.item-22,
+.item-23,
+.item-24,
+.item-33 {
   grid-column: span 1;
   grid-row: span 2;
 }
 
-.item-6 {
-  grid-column: span 1;
-  grid-row: span 2;
-}
-
-.item-9 {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-
-.item-10 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.item-12 {
-  grid-column: span 1;
-  grid-row: span 2;
-}
-.item-14 {
-  grid-column: span 1;
-  grid-row: span 2;
-}
-
-.item-15 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-.item-16 {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-.item-22 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.item-24 {
-  grid-column: span 1;
-  grid-row: span 2;
+.item-25 img {
+  object-position: 50% 80%;
 }
 
 /*=================
