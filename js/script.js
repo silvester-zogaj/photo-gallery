@@ -54,11 +54,13 @@ gridImages.forEach(function (image) {
   image.addEventListener("click", function () {
     modalOverlay.style.display = "flex";
     modalImg.src = image.src;
+    sidebarOpenIcon.style.display = "block";
     isModalOpen = true;
   });
 });
 
 // CLOSE MODAL
+
 window.addEventListener("click", function (e) {
   if (e.target === modalOverlay) {
     modalOverlay.style.display = "none";
@@ -73,13 +75,12 @@ closeBtn.addEventListener("click", function () {
   isModalOpen = false;
 });
 
+// when I press escape while modal is open, modal disappear and sidebarOpenIcon re-appears.
 window.addEventListener("keydown", function (event) {
   if (event.key === "Escape" && isModalOpen === true) {
     modalOverlay.style.display = "none";
     sidebarOpenIcon.style.display = "block";
     isModalOpen = false;
-  } else {
-    sidebarOpenIcon.style.display = "none";
   }
 });
 
@@ -111,22 +112,18 @@ for (let i = 0; i < list.length; i++) {
 
 //MEDIA QUERIES
 
-// if screen size meets requirements, modal will keep sidebar open in background and in general.
+// if screen size meets requirements, opening modal will close sidebar.
 
 //
 function screenFunction(screen) {
   if (screen.matches) {
-    sidebarOpen();
-    gridImages.forEach(function (image) {
-      image.addEventListener("click", function () {
-        modalOverlay.style.display = "flex";
-        modalImg.src = image.src;
-        sidebarOpen();
-      });
-    });
-    // if not, modal will close sidebar when modal is opened.
-  } else {
     sidebarClose();
+    sidebarOpenIcon.style.display = "block";
+    if (isModalOpen === true) {
+      sidebarOpenIcon.style.display = "none";
+    } else {
+      sidebarOpenIcon.style.display = "block";
+    }
     gridImages.forEach(function (image) {
       image.addEventListener("click", function () {
         modalOverlay.style.display = "flex";
@@ -136,9 +133,20 @@ function screenFunction(screen) {
         isModalOpen = true;
       });
     });
+    // if not, modal will keep sidebar open in background and in general.
+  } else {
+    sidebarOpen();
+    gridImages.forEach(function (image) {
+      image.addEventListener("click", function () {
+        modalOverlay.style.display = "flex";
+        modalImg.src = image.src;
+        sidebarOpen();
+        isModalOpen = true;
+      });
+    });
   }
 }
 
-const screen = window.matchMedia("(min-width: 850px)");
+const screen = window.matchMedia("(max-width: 850px)");
 screenFunction(screen);
 screen.addListener(screenFunction);

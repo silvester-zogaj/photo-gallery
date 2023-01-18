@@ -168,7 +168,6 @@ body {
   width: 100%;
   position: fixed;
   background-color: black;
-  z-index: -1;
 }
 
 /*============================
@@ -230,6 +229,9 @@ body {
 .item-25 img {
   object-position: 50% 80%;
 }
+.item-33 img {
+  object-position: 50% 20%;
+}
 
 /*=================
       MODAL 
@@ -249,16 +251,17 @@ body {
 }
 
 .modal-overlay img {
-  object-fit: cover;
-  height: 70rem;
-  width: 80rem;
+  object-fit: contain;
+  height: 80%;
+  min-width: 25rem;
+  width: auto;
 }
 
 .close-btn {
   position: absolute;
   color: white;
   font-size: 6rem;
-  top: 5%;
+  top: 7%;
   right: 5%;
   cursor: pointer;
 }
@@ -276,18 +279,11 @@ body {
     grid-auto-rows: 35rem;
     grid-auto-flow: dense;
     gap: 1.2rem;
-    z-index: -1;
   }
 
   .item {
     grid-column: span 1;
     grid-row: span 1;
-  }
-
-  .modal-overlay img {
-    object-fit: cover;
-    height: 60rem;
-    width: 70rem;
   }
 }
 
@@ -341,13 +337,6 @@ body {
     grid-auto-rows: 35rem;
     grid-auto-flow: dense;
     row-gap: 1.5rem;
-    z-index: -1;
     transition: all 0.3s ease-in-out;
-  }
-
-  .modal-overlay img {
-    object-fit: cover;
-    height: 50rem;
-    width: 60rem;
   }
 }
