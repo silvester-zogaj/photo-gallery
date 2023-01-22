@@ -1,1 +1,1 @@
-Photo gallery experimentation with grid and filtering images displayed based on the category selected. Active selection will remain active. Mobile view removes sidebar automatically unless you press the arrow to manually open it up. Also the span of the images change when resized.
+Photo gallery experimentation with grid and filtering images displayed based on the category selected. Active selection will remain active. Mobile view removes the sidebar automatically unless you press the arrow to manually open it up. Also, the span of the images changes when resized.
